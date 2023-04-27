@@ -32,6 +32,16 @@ namespace Constructor_Interface_AccessModifier
                     animal.PigSound();
                     animal.DogSound();
                     break;
+                case 3:
+                    AccessModifiers myObj = new AccessModifiers();
+                    myObj.myPublicInt = 42; // Can access myPublicInt from anywhere
+                                            // myObj.myPrivateInt = 42; // Error - cannot access myPrivateInt outside of MyClass
+                                            // myObj.myProtectedInt = 42; // Error - cannot access myProtectedInt outside of MyClass and any derived classes
+                    myObj.myInternalInt = 42; // Can access myInternalInt within the same assembly
+
+                    MyDerivedClass myDerivedObj = new MyDerivedClass();
+                    myDerivedObj.MyMethod();
+                    break;
             }
             Console.ReadLine();
 
